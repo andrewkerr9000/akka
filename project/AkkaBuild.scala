@@ -28,9 +28,9 @@ object AkkaBuild {
     UnidocRoot.akkaSettings ++
     Protobuf.settings ++ Seq(
       parallelExecution in GlobalScope := System.getProperty("akka.parallelExecution", parallelExecutionByDefault.toString).toBoolean,
-      version in ThisBuild := "2.5.22"
+      version in ThisBuild := "2.5.22-PruningState"
     )
- 
+
   lazy val mayChangeSettings = Seq(
     description := """|This module of Akka is marked as
                       |'may change', which means that it is in early

@@ -40,7 +40,7 @@ import akka.util.unused
       case (PruningInitialized(thisOwner, thisSeen), PruningInitialized(thatOwner, thatSeen)) =>
         if (thisOwner == thatOwner)
           PruningInitialized(thisOwner, thisSeen.union(thatSeen))
-        else if (Member.addressOrdering.compare(thisOwner.address, thatOwner.address) > 0)
+        else if (Member.addressOrdering.compare(thisOwner.address, thatOwner.address) < 0)
           that
         else
           this
